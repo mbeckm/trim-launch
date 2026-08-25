@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trim launch</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #111;
+      --muted: #6b6b6b;
+      --line: #e8e8e8;
+      --bg: #fafafa;
+      --done: #0b7a3b;
+      --blocked: #b42318;
+      --next: #155eef;
+      --later: #6b6b6b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+    }
+    main { max-width: 920px; margin: 0 auto; padding: 40px 20px 80px; }
+    h1 { font-size: 28px; letter-spacing: -0.4px; margin: 0 0 6px; }
+    h2 { font-size: 18px; margin: 36px 0 10px; }
+    .sub { color: var(--muted); margin: 0 0 24px; }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 0 0 28px;
+    }
+    .stat {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .stat b { display: block; font-size: 22px; letter-spacing: -0.3px; }
+    .stat span { color: var(--muted); font-size: 13px; }
+    .callout {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin: 0 0 28px;
+    }
+    .callout strong { display: block; margin-bottom: 6px; }
+    .callout ol { margin: 0; padding-left: 18px; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; font-size: 14px; }
+    th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-weight: 600; background: #f6f6f6; }
+    tr:last-child td { border-bottom: 0; }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+    tr[data-status="done"] .tag { background: #e3f6ea; color: var(--done); }
+    tr[data-status="next"] .tag { background: #e8efff; color: var(--next); }
+    tr[data-status="blocked"] .tag { background: #fdecea; color: var(--blocked); }
+    tr[data-status="later"] .tag { background: #f1f1f1; color: var(--later); }
+    tr[data-status="done"] td:nth-child(2) { color: var(--muted); text-decoration: line-through; }
+    .who { white-space: nowrap; color: var(--muted); }
+    .est { white-space: nowrap; }
+    footer { margin-top: 28px; color: var(--muted); font-size: 13px; }
+    a { color: var(--next); }
+    @media (max-width: 700px) {
+      .stats { grid-template-columns: 1fr 1fr; }
+      .who, .est { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Trim launch</h1>
+    <p class="sub">App Store name <b>Trim Workout</b>. Home screen <b>Trim</b>. Updated 25 Aug 2026, 13:20 CEST.</p>
+
+    <div class="stats">
+      <div class="stat"><b>22–28h</b><span>work to submit</span></div>
+      <div class="stat"><b>4–10d</b><span>calendar if Apple is already enrolled</span></div>
+      <div class="stat"><b>+8–12h</b><span>Apple Ads v1 after TestFlight</span></div>
+      <div class="stat"><b>6</b><span>hard blockers</span></div>
+    </div>
+
+    <div class="callout">
+      <strong>Critical path. These stop a submit.</strong>
+      <ol>
+        <li>Apple Developer + Paid Apps agreement / tax / banking (Marvin, can wait days).</li>
+        <li>Live privacy + support URLs. Placeholders get rejected.</li>
+        <li><code>EXPO_PUBLIC_EXERCISEDB_RAPIDAPI_KEY</code> as an EAS secret.</li>
+        <li>Trim Pro gates not coded (1 plan + logging free; rest is Pro).</li>
+        <li>A real-device production build. Needs Marvin’s Mac + Apple signing.</li>
+        <li>App is still local only. Other agents can run this board, not the binary.</li>
+      </ol>
+    </div>
+
+    <h2>0. Already done</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Store name Trim Workout, home screen Trim</td><td class="who">Ventury</td><td class="est">—</td><td>Bundle ID unchanged.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>EAS production + submit profiles</td><td class="who">Marvin</td><td class="est">—</td><td>Project 88024391-…</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Icon, listing draft, privacy HTML, RevenueCat in app</td><td class="who">Marvin</td><td class="est">—</td><td>Listing still says “no account required”.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>1. Apple · ~3h work, 1–5 days wait</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Apple Developer Program enrolled, agreements accepted</td><td class="who">Marvin</td><td class="est">1h + 0–48h</td><td>Unknown from here. Confirm in App Store Connect.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Paid Apps agreement + tax + banking</td><td class="who">Marvin</td><td class="est">1–2h + 1–5d</td><td>Required for Trim Pro. Longest wait on the board.</td></tr>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Create app record: Trim Workout, bundle <code>com.marvinbeckmann.ScratchWorkout</code></td><td class="who">Marvin</td><td class="est">20m</td><td>Needs Developer Program. SKU: trim-workout-ios-2026.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>2. Legal URLs · ~1.5h</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Deploy <code>legal/</code> (privacy + support) to a live URL</td><td class="who">Ventury</td><td class="est">45m</td><td>Vercel project <code>scratch-legal</code> already exists. Rename copy to Trim is done locally.</td></tr>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Paste live URLs into <code>store.config.json</code></td><td class="who">Ventury</td><td class="est">10m</td><td>Marketing URL optional.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Privacy nutrition labels in App Store Connect</td><td class="who">Marvin</td><td class="est">30m</td><td>Local data + RevenueCat for IAP. After app record exists.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3. Monetization · ~11h</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Lock free vs Pro: 1 plan + logging free; Pro = unlimited plans, full history, stats</td><td class="who">Marvin</td><td class="est">15m</td><td>Working assumption until Marvin overrides. 7-day trial on yearly. No weekly.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Create IAP: yearly $49.99 (default), monthly $5.99</td><td class="who">Marvin</td><td class="est">45m</td><td>Blocked on Paid Apps agreement.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>RevenueCat offerings + 7-day intro on annual. Keep entitlement id <code>Scratch Pro</code></td><td class="who">Marvin</td><td class="est">1h</td><td>Display name can say Trim Pro. Don’t rename the id.</td></tr>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Code hard gates (second plan, old history). Soft paywall after first Done, once</td><td class="who">Ventury</td><td class="est">6h</td><td>Never paywall mid-set. App is local, so this is on-device work.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Paywall copy + layout for Trim (social proof, impact, yearly selected)</td><td class="who">Designy</td><td class="est">2h</td><td>Remote via RevenueCat. No 12-screen quiz.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Restore Purchases on a real device</td><td class="who">Marvin</td><td class="est">1h</td><td>After a production/TestFlight build.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>4. Store listing · ~5h</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Fix listing copy (Trim Pro exists; drop “no account required” as if everything is free)</td><td class="who">Ventury</td><td class="est">45m</td><td>Keep subtitle: Log sets. Follow a plan.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Screenshots 6.7" and 6.1"</td><td class="who">Designy</td><td class="est">3h</td><td>After Trim name is in the UI. iPhone only, no iPad.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Keywords (no repeats vs title/subtitle) + review notes</td><td class="who">Ventury</td><td class="est">50m</td><td>Review notes: local workouts, IAP via RC, no HealthKit, no account.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5. Build, TestFlight, submit · ~5h + review wait</h2>
+    <table>
+      <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Put RapidAPI key in EAS secrets</td><td class="who">Marvin</td><td class="est">15m</td><td>Store build must not use oss.exercisedb.dev.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td><code>eas build --platform ios --profile production</code></td><td class="who">Marvin</td><td class="est">45m</td><td>Needs Apple team + Mac session.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Full gym loop on iPhone: plan → log → history → paywall → restore</td><td class="who">Marvin</td><td class="est">2.5h</td><td>Also Live Activities / widget smoke test.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>TestFlight, use it for a few real sessions</td><td class="who">Marvin</td><td class="est">3d cal / 1h</td><td>Ship an unfinished-but-safe build early if review is slow.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Submit. Phased release already on</td><td class="who">Marvin</td><td class="est">30m + 1–7d</td><td>Demo video in review notes if paywall is picky.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>6. Paid ads · after TestFlight, not on the submit path</h2>
+    <p class="sub">You know ads. We are not copying the $7.99/week TikTok-arbitrage playbook. Apple Search Ads first (intent). MMP + Mixpanel before any spend. TikTok/Meta only once download-to-paid is a real number.</p>
+    <table>
+      <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Mixpanel (or PostHog): onboarding complete, subscribe, D2P</td><td class="who">Ventury</td><td class="est">3h</td><td>Need this before judging ads. Aim: 75% onboarding, 4–8% D2P.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Appsflyer (or Appstack) + map subscribe</td><td class="who">Ventury</td><td class="est">3h</td><td>Only when spend starts. Don’t add ATT until an ads SDK exists.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Apple Search Ads: $100 credit, Search Match off, competitor keywords, US/UK/DE split later</td><td class="who">Marvin</td><td class="est">2h setup</td><td>Best first channel for a gym logger. Ceiling is search volume.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>5 creatives (app demo + gym UGC). No weekly in the ad.</td><td class="who">Marvin</td><td class="est">6h</td><td>For Apple Ads and later Meta/TikTok.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>TikTok or Meta app-install campaign</td><td class="who">Marvin</td><td class="est">ongoing</td><td>Only after ASA + organic D2P is known. Start ~$50–70/day. Kill a creative after $50 with zero subs.</td></tr>
+      </tbody>
+    </table>
+
+    <footer>
+      Repo: <a href="https://github.com/mbeckm/trim-launch">github.com/mbeckm/trim-launch</a>
+      · Agents: edit this file, push <code>main</code>.
+      · App code stays on Marvin’s Mac until he says to put <code>mobile/</code> on GitHub.
+    </footer>
+  </main>
+</body>
+</html>
