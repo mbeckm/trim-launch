@@ -81,21 +81,20 @@
 <body>
   <main>
     <h1>Trim launch</h1>
-    <p class="sub">App Store name <b>Trim Workout</b>. Home screen <b>Trim</b>. Updated 25 Aug 2026, 14:55 CEST.</p>
+    <p class="sub">App Store name <b>Trim Workout</b>. Home screen <b>Trim</b>. Updated 27 Aug 2026, 16:10 CEST.</p>
 
     <div class="stats">
-      <div class="stat"><b>22–28h</b><span>work to submit</span></div>
-      <div class="stat"><b>4–10d</b><span>calendar if Apple is already enrolled</span></div>
+      <div class="stat"><b>16–22h</b><span>work left to submit</span></div>
+      <div class="stat"><b>1–5d</b><span>Apple wait on tax / DSA</span></div>
       <div class="stat"><b>+8–12h</b><span>Apple Ads v1 after TestFlight</span></div>
-      <div class="stat"><b>6</b><span>hard blockers</span></div>
+      <div class="stat"><b>5</b><span>hard blockers</span></div>
     </div>
 
     <div class="callout">
       <strong>Critical path. These stop a submit.</strong>
       <ol>
-        <li>Apple Developer + Paid Apps agreement / tax / banking (Marvin, can wait days).</li>
-        <li>Live privacy + support URLs. Placeholders get rejected.</li>
-        <li><code>EXPO_PUBLIC_EXERCISEDB_RAPIDAPI_KEY</code> as an EAS secret.</li>
+        <li>Paid Apps tax/banking + DSA trader docs were submitted 27 Aug. Waiting on Apple (can take days).</li>
+        <li>ExerciseDB is not licensed for a store build. Pay RapidAPI (~$13/mo) before review, or strip the GIFs. Content Rights was left unanswered.</li>
         <li>Trim Pro gates not coded (1 plan + logging free; rest is Pro).</li>
         <li>A real-device production build. Needs Marvin’s Mac + Apple signing.</li>
         <li>App is still local only. Other agents can run this board, not the binary.</li>
@@ -108,37 +107,38 @@
       <tbody>
         <tr data-status="done"><td><span class="tag">Done</span></td><td>Store name Trim Workout, home screen Trim</td><td class="who">Ventury</td><td class="est">—</td><td>Bundle ID unchanged.</td></tr>
         <tr data-status="done"><td><span class="tag">Done</span></td><td>EAS production + submit profiles</td><td class="who">Marvin</td><td class="est">—</td><td>Project 88024391-…</td></tr>
-        <tr data-status="done"><td><span class="tag">Done</span></td><td>Icon, listing draft, privacy HTML, RevenueCat in app</td><td class="who">Marvin</td><td class="est">—</td><td>Listing still says “no account required”.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Icon, listing draft, privacy HTML, RevenueCat in app</td><td class="who">Marvin</td><td class="est">—</td><td>Legal site live. Listing copy calls out Trim Pro.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Apple Developer enrolled + app record Trim Workout</td><td class="who">Marvin</td><td class="est">—</td><td>Bundle <code>com.marvinbeckmann.ScratchWorkout</code>. SKU <code>trim-workout-ios-2026</code>.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Paid Apps: bank + W-8BEN + DSA docs submitted</td><td class="who">Marvin</td><td class="est">—</td><td>C24 EUR. Treaty Art. 12(1) at 0%. DSA trader, Ausweis uploaded. Apple still has to approve.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Pricing and Availability</td><td class="who">Marvin</td><td class="est">—</td><td>Free download, all countries, no pre-order.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Subscriptions in App Store Connect</td><td class="who">Marvin</td><td class="est">—</td><td>Group Trim Pro. Yearly $49.99 + 7-day intro, monthly $5.99, no weekly. IDs <code>com.marvinbeckmann.ScratchWorkout.pro.yearly</code> / <code>.pro.monthly</code>.</td></tr>
       </tbody>
     </table>
 
-    <h2>1. Apple · ~3h work, 1–5 days wait</h2>
+    <h2>1. Apple · waiting on Apple</h2>
     <table>
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Apple Developer Program enrolled, agreements accepted</td><td class="who">Marvin</td><td class="est">1h + 0–48h</td><td>Unknown from here. Confirm in App Store Connect.</td></tr>
-        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Paid Apps agreement + tax + banking</td><td class="who">Marvin</td><td class="est">1–2h + 1–5d</td><td>Required for Trim Pro. Longest wait on the board.</td></tr>
-        <tr data-status="next"><td><span class="tag">Next</span></td><td>Create app record: Trim Workout, bundle <code>com.marvinbeckmann.ScratchWorkout</code></td><td class="who">Marvin</td><td class="est">20m</td><td>Needs Developer Program. SKU: trim-workout-ios-2026.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Apple clears Paid Apps + DSA verification</td><td class="who">Apple</td><td class="est">1–5d</td><td>Work is submitted. Don’t resubmit unless they reject the Ausweis.</td></tr>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Fix App Privacy labels</td><td class="who">Marvin</td><td class="est">15m</td><td>Currently “no data collected”. Privacy policy admits RevenueCat sees purchase tokens. Declare Purchases, App Functionality, not linked, not tracking.</td></tr>
       </tbody>
     </table>
 
-    <h2>2. Legal URLs · ~1.5h</h2>
+    <h2>2. Legal URLs · done</h2>
     <table>
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
         <tr data-status="done"><td><span class="tag">Done</span></td><td>Deploy <code>legal/</code> (privacy + support) to a live URL</td><td class="who">Ventury</td><td class="est">45m</td><td><a href="https://scratch-legal.vercel.app">scratch-legal.vercel.app</a>. Trim copy is live.</td></tr>
-        <tr data-status="done"><td><span class="tag">Done</span></td><td>Paste live URLs into <code>store.config.json</code></td><td class="who">Ventury</td><td class="est">10m</td><td>Privacy + support + marketing all point at scratch-legal.vercel.app.</td></tr>
-        <tr data-status="later"><td><span class="tag">Later</span></td><td>Privacy nutrition labels in App Store Connect</td><td class="who">Marvin</td><td class="est">30m</td><td>Local data + RevenueCat for IAP. After app record exists.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Paste live URLs into <code>store.config.json</code> and App Store Connect</td><td class="who">Marvin</td><td class="est">10m</td><td>Privacy <a href="https://scratch-legal.vercel.app/privacy">/privacy</a>. Support is the root URL.</td></tr>
       </tbody>
     </table>
 
-    <h2>3. Monetization · ~11h</h2>
+    <h2>3. Monetization · ~10h</h2>
     <table>
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr data-status="next"><td><span class="tag">Next</span></td><td>Lock free vs Pro: 1 plan + logging free; Pro = unlimited plans, full history, stats</td><td class="who">Marvin</td><td class="est">15m</td><td>Working assumption until Marvin overrides. 7-day trial on yearly. No weekly.</td></tr>
-        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Create IAP: yearly $49.99 (default), monthly $5.99</td><td class="who">Marvin</td><td class="est">45m</td><td>Blocked on Paid Apps agreement.</td></tr>
-        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>RevenueCat offerings + 7-day intro on annual. Keep entitlement id <code>Scratch Pro</code></td><td class="who">Marvin</td><td class="est">1h</td><td>Display name can say Trim Pro. Don’t rename the id.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Lock free vs Pro: 1 plan + logging free; Pro = unlimited plans, full history, stats</td><td class="who">Marvin</td><td class="est">15m</td><td>7-day trial on yearly. No weekly.</td></tr>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>RevenueCat offerings + 7-day intro on annual. Keep entitlement id <code>Scratch Pro</code></td><td class="who">Marvin</td><td class="est">1h</td><td>Apple products exist now. Display name Trim Pro. Don’t rename the entitlement id.</td></tr>
         <tr data-status="next"><td><span class="tag">Next</span></td><td>Code hard gates (second plan, old history). Soft paywall after first Done, once</td><td class="who">Ventury</td><td class="est">6h</td><td>Never paywall mid-set. App is local, so this is on-device work.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Paywall copy + layout for Trim (social proof, impact, yearly selected)</td><td class="who">Designy</td><td class="est">2h</td><td>Remote via RevenueCat. No 12-screen quiz.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Restore Purchases on a real device</td><td class="who">Marvin</td><td class="est">1h</td><td>After a production/TestFlight build.</td></tr>
@@ -150,6 +150,7 @@
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
         <tr data-status="done"><td><span class="tag">Done</span></td><td>Fix listing copy (Trim Pro exists; drop “no account required” as if everything is free)</td><td class="who">Ventury</td><td class="est">45m</td><td>No account kept as a fact. Trim Pro called out as optional.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Content Rights in App Store Connect</td><td class="who">Marvin</td><td class="est">10m</td><td>Left unanswered 27 Aug. Don’t claim Yes on free ExerciseDB. Don’t claim No if GIFs stay.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Screenshots 6.7" and 6.1"</td><td class="who">Designy</td><td class="est">3h</td><td>After Trim name is in the UI. iPhone only, no iPad.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Keywords (no repeats vs title/subtitle) + review notes</td><td class="who">Ventury</td><td class="est">50m</td><td>Review notes: local workouts, IAP via RC, no HealthKit, no account.</td></tr>
       </tbody>
@@ -159,7 +160,7 @@
     <table>
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Put RapidAPI key in EAS secrets</td><td class="who">Marvin</td><td class="est">15m</td><td>Store build must not use oss.exercisedb.dev.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>ExerciseDB commercial rights + RapidAPI key in EAS secrets</td><td class="who">Marvin</td><td class="est">30m</td><td>Free RapidAPI is not a store license. Pay ~$13/mo before review, or ship without those GIFs. Do not use oss.exercisedb.dev.</td></tr>
         <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td><code>eas build --platform ios --profile production</code></td><td class="who">Marvin</td><td class="est">45m</td><td>Needs Apple team + Mac session.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Full gym loop on iPhone: plan → log → history → paywall → restore</td><td class="who">Marvin</td><td class="est">2.5h</td><td>Also Live Activities / widget smoke test.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>TestFlight, use it for a few real sessions</td><td class="who">Marvin</td><td class="est">3d cal / 1h</td><td>Ship an unfinished-but-safe build early if review is slow.</td></tr>
