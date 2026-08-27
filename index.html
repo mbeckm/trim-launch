@@ -81,12 +81,12 @@
 <body>
   <main>
     <h1>Trim launch</h1>
-    <p class="sub">App Store name <b>Trim Workout</b>. Home screen <b>Trim</b>. Updated 27 Aug 2026, 16:20 CEST.</p>
+    <p class="sub">App Store name <b>Trim Workout</b>. Home screen <b>Trim</b>. Updated 27 Aug 2026, 16:35 CEST.</p>
 
     <div class="stats">
-      <div class="stat"><b>16–22h</b><span>work left to submit</span></div>
+      <div class="stat"><b>15–21h</b><span>work left to submit</span></div>
       <div class="stat"><b>1–5d</b><span>Apple wait on tax / DSA</span></div>
-      <div class="stat"><b>+8–12h</b><span>Apple Ads v1 after TestFlight</span></div>
+      <div class="stat"><b>Connect</b><span>copy done; screenshots + build left</span></div>
       <div class="stat"><b>5</b><span>hard blockers</span></div>
     </div>
 
@@ -94,9 +94,9 @@
       <strong>Critical path. These stop a submit.</strong>
       <ol>
         <li>Paid Apps tax/banking + DSA trader docs were submitted 27 Aug. Waiting on Apple (can take days).</li>
-        <li>ExerciseDB is not licensed for a store build. Pay RapidAPI (~$13/mo) before review, or strip the GIFs. Content Rights was left unanswered.</li>
+        <li>ExerciseDB is not licensed for a store build. Pay RapidAPI (~$13/mo) before review, or strip the GIFs. Then answer Content Rights.</li>
         <li>Trim Pro gates not coded (1 plan + logging free; rest is Pro).</li>
-        <li>A real-device production build. Needs Marvin’s Mac + Apple signing.</li>
+        <li>A real-device production build. Needs Marvin’s Mac + Apple signing. Screenshots wait on this.</li>
         <li>App is still local only. Other agents can run this board, not the binary.</li>
       </ol>
     </div>
@@ -112,6 +112,9 @@
         <tr data-status="done"><td><span class="tag">Done</span></td><td>Paid Apps: bank + W-8BEN + DSA docs submitted</td><td class="who">Marvin</td><td class="est">—</td><td>C24 EUR. Treaty Art. 12(1) at 0%. DSA trader, Ausweis uploaded. Apple still has to approve.</td></tr>
         <tr data-status="done"><td><span class="tag">Done</span></td><td>Pricing and Availability</td><td class="who">Marvin</td><td class="est">—</td><td>Free download, all countries, no pre-order.</td></tr>
         <tr data-status="done"><td><span class="tag">Done</span></td><td>Subscriptions in App Store Connect</td><td class="who">Marvin</td><td class="est">—</td><td>Group Trim Pro. Yearly $49.99 + 7-day intro, monthly $5.99, no weekly. IDs <code>com.marvinbeckmann.ScratchWorkout.pro.yearly</code> / <code>.pro.monthly</code>.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>App Privacy labels</td><td class="who">Marvin</td><td class="est">—</td><td>Purchases, User ID, Device ID, Product Interaction. App Functionality + Analytics (Mixpanel). Linked yes, tracking no. Labels must match the shipping build.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Promotional text + description saved</td><td class="who">Marvin</td><td class="est">—</td><td>Promo: last session’s weights in the set table. Description: minimal tracker, plans, log, graphs, no social/comments/AI plans.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Keywords, age rating, review notes</td><td class="who">Marvin</td><td class="est">—</td><td>4+. Keywords in Connect. Review notes: local workouts, IAP via RC, no HealthKit, no account.</td></tr>
       </tbody>
     </table>
 
@@ -120,7 +123,6 @@
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
         <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>Apple clears Paid Apps + DSA verification</td><td class="who">Apple</td><td class="est">1–5d</td><td>Work is submitted. Don’t resubmit unless they reject the Ausweis.</td></tr>
-        <tr data-status="done"><td><span class="tag">Done</span></td><td>App Privacy labels</td><td class="who">Marvin</td><td class="est">15m</td><td>Purchases, User ID, Device ID, Product Interaction. App Functionality + Analytics (Mixpanel). Linked yes, tracking no.</td></tr>
       </tbody>
     </table>
 
@@ -149,10 +151,10 @@
     <table>
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr data-status="done"><td><span class="tag">Done</span></td><td>Fix listing copy (Trim Pro exists; drop “no account required” as if everything is free)</td><td class="who">Ventury</td><td class="est">45m</td><td>No account kept as a fact. Trim Pro called out as optional.</td></tr>
-        <tr data-status="later"><td><span class="tag">Later</span></td><td>Content Rights in App Store Connect</td><td class="who">Marvin</td><td class="est">10m</td><td>Left unanswered 27 Aug. Don’t claim Yes on free ExerciseDB. Don’t claim No if GIFs stay.</td></tr>
-        <tr data-status="later"><td><span class="tag">Later</span></td><td>Screenshots 6.7" and 6.1"</td><td class="who">Designy</td><td class="est">3h</td><td>After Trim name is in the UI. iPhone only, no iPad.</td></tr>
-        <tr data-status="done"><td><span class="tag">Done</span></td><td>Keywords + review notes</td><td class="who">Marvin</td><td class="est">50m</td><td>Keywords in Connect. Review notes: local workouts, IAP via RC, no HealthKit, no account.</td></tr>
+        <tr data-status="done"><td><span class="tag">Done</span></td><td>Listing copy in Connect (name, subtitle, promo, description, keywords)</td><td class="who">Marvin</td><td class="est">—</td><td>Connect typing is done. Don’t reopen unless the shipping product changes.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Content Rights in App Store Connect</td><td class="who">Marvin</td><td class="est">10m</td><td>Still unanswered. Don’t claim Yes on free ExerciseDB. Don’t claim No if GIFs stay. Answer after pay-or-strip.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Screenshots 6.7" and 6.1"</td><td class="who">Designy</td><td class="est">3h</td><td>Needs a Trim UI build. iPhone only, no iPad. Required to submit.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Leftover 1.0 fields if still blank</td><td class="who">Marvin</td><td class="est">10m</td><td>Copyright 2026 Marvin Beckmann. What’s New: Initial release. Sign-in required: No. Phased release already on.</td></tr>
       </tbody>
     </table>
 
@@ -160,8 +162,9 @@
     <table>
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>ExerciseDB commercial rights + RapidAPI key in EAS secrets</td><td class="who">Marvin</td><td class="est">30m</td><td>Free RapidAPI is not a store license. Pay ~$13/mo before review, or ship without those GIFs. Do not use oss.exercisedb.dev.</td></tr>
-        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td><code>eas build --platform ios --profile production</code></td><td class="who">Marvin</td><td class="est">45m</td><td>Needs Apple team + Mac session.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td>ExerciseDB commercial rights + RapidAPI key in EAS secrets</td><td class="who">Marvin</td><td class="est">30m</td><td>Free RapidAPI is not a store license. Pay ~$13/mo before review, or ship without those GIFs. Do not use oss.exercisedb.dev. Then answer Content Rights.</td></tr>
+        <tr data-status="next"><td><span class="tag">Next</span></td><td>Set <code>ITSAppUsesNonExemptEncryption</code> = false in Info.plist</td><td class="who">Marvin</td><td class="est">10m</td><td>HTTPS/IAP only. Do not upload an encryption PDF in Connect.</td></tr>
+        <tr data-status="blocked"><td><span class="tag">Blocked</span></td><td><code>eas build --platform ios --profile production</code></td><td class="who">Marvin</td><td class="est">45m</td><td>Needs Apple team + Mac session. Skip Add for Review until this exists.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Full gym loop on iPhone: plan → log → history → paywall → restore</td><td class="who">Marvin</td><td class="est">2.5h</td><td>Also Live Activities / widget smoke test.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>TestFlight, use it for a few real sessions</td><td class="who">Marvin</td><td class="est">3d cal / 1h</td><td>Ship an unfinished-but-safe build early if review is slow.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Submit. Phased release already on</td><td class="who">Marvin</td><td class="est">30m + 1–7d</td><td>Demo video in review notes if paywall is picky.</td></tr>
@@ -173,7 +176,7 @@
     <table>
       <thead><tr><th>Status</th><th>Item</th><th>Who</th><th>Time</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr data-status="later"><td><span class="tag">Later</span></td><td>Mixpanel (or PostHog): onboarding complete, subscribe, D2P</td><td class="who">Ventury</td><td class="est">3h</td><td>Need this before judging ads. Aim: 75% onboarding, 4–8% D2P.</td></tr>
+        <tr data-status="later"><td><span class="tag">Later</span></td><td>Mixpanel (or PostHog): onboarding complete, subscribe, D2P</td><td class="who">Ventury</td><td class="est">3h</td><td>Privacy labels already declare Mixpanel. Put it in the binary before submit, or edit the labels. Aim: 75% onboarding, 4–8% D2P.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Appsflyer (or Appstack) + map subscribe</td><td class="who">Ventury</td><td class="est">3h</td><td>Only when spend starts. Don’t add ATT until an ads SDK exists.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>Apple Search Ads: $100 credit, Search Match off, competitor keywords, US/UK/DE split later</td><td class="who">Marvin</td><td class="est">2h setup</td><td>Best first channel for a gym logger. Ceiling is search volume.</td></tr>
         <tr data-status="later"><td><span class="tag">Later</span></td><td>5 creatives (app demo + gym UGC). No weekly in the ad.</td><td class="who">Marvin</td><td class="est">6h</td><td>For Apple Ads and later Meta/TikTok.</td></tr>
